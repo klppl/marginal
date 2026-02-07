@@ -45,11 +45,57 @@
             "body_font": {
                 "type": "select",
                 "options": [
-                    "System Sans",
-                    "System Serif",
-                    "Monospace"
+                    "Inter",
+                    "Source Sans",
+                    "DM Sans",
+                    "Space Grotesk",
+                    "Libre Baskerville",
+                    "JetBrains Mono",
+                    "IBM Plex Mono",
+                    "Courier Prime"
                 ],
-                "default": "System Sans"
+                "default": "Inter"
+            },
+            "body_font_size": {
+                "type": "select",
+                "options": [
+                    "Small",
+                    "Medium",
+                    "Large"
+                ],
+                "default": "Medium"
+            },
+            "density": {
+                "type": "select",
+                "options": [
+                    "Compact",
+                    "Normal",
+                    "Spacious"
+                ],
+                "default": "Normal"
+            },
+            "color_palette": {
+                "type": "select",
+                "options": [
+                    "Default",
+                    "Catppuccin Mocha",
+                    "Dracula",
+                    "Nord",
+                    "Gruvbox",
+                    "Tokyo Night",
+                    "Rose Pine",
+                    "Everforest"
+                ],
+                "default": "Default"
+            },
+            "layout_alignment": {
+                "type": "select",
+                "options": [
+                    "Left",
+                    "Off-center",
+                    "Center"
+                ],
+                "default": "Center"
             }
         },
         "image_sizes": {

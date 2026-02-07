@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{@site.locale}}" class="{{#match @custom.color_palette "Catppuccin Mocha"}}palette-catppuccin-mocha{{else match @custom.color_palette "Dracula"}}palette-dracula{{else match @custom.color_palette "Nord"}}palette-nord{{else match @custom.color_palette "Gruvbox"}}palette-gruvbox{{else match @custom.color_palette "Tokyo Night"}}palette-tokyo-night{{else match @custom.color_palette "Rose Pine"}}palette-rose-pine{{else match @custom.color_palette "Everforest"}}palette-everforest{{/match}}">
+
 <head>
 
     <meta charset="utf-8" />
@@ -7,71 +8,117 @@
     <link rel="stylesheet" href="{{asset "built/index.css"}}" />
     <script src="{{asset "built/index.js"}}" defer></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    {{#match @custom.body_font "Source Sans"}}
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    {{else match @custom.body_font "DM Sans"}}
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    {{else match @custom.body_font "Space Grotesk"}}
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    {{else match @custom.body_font "Libre Baskerville"}}
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    {{else match @custom.body_font "JetBrains Mono"}}
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    {{else match @custom.body_font "IBM Plex Mono"}}
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    {{else match @custom.body_font "Courier Prime"}}
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    {{else}}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    {{/match}}
+
     <title>{{meta_title}}</title>
 
     <style>
         :root {
-            --global-font: {{#match @custom.body_font "System Serif"}}Georgia, "Times New Roman", serif{{else match @custom.body_font "Monospace"}}ui-monospace, Menlo, Monaco, "Cascadia Code", monospace{{else}}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif{{/match}};
+            --global-font: {{#match @custom.body_font "Source Sans"}}"Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif{{else match @custom.body_font "DM Sans"}}"DM Sans", -apple-system, BlinkMacSystemFont, sans-serif{{else match @custom.body_font "Space Grotesk"}}"Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif{{else match @custom.body_font "Libre Baskerville"}}"Libre Baskerville", Georgia, "Times New Roman", serif{{else match @custom.body_font "JetBrains Mono"}}"JetBrains Mono", ui-monospace, Menlo, Monaco, monospace{{else match @custom.body_font "IBM Plex Mono"}}"IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace{{else match @custom.body_font "Courier Prime"}}"Courier Prime", "Courier New", Courier, monospace{{else}}"Inter", -apple-system, BlinkMacSystemFont, sans-serif{{/match}};
+            --body-size: {{#match @custom.body_font_size "Small"}}0.95rem{{else match @custom.body_font_size "Large"}}1.25rem{{else}}1.15rem{{/match}};
+            --layout-margin: {{#match @custom.layout_alignment "Left"}}0{{else match @custom.layout_alignment "Off-center"}}0 auto 0 5vw{{else}}0 auto{{/match}};
+            {{#match @custom.density "Compact"}}
+            --content-spacing: 1rem;
+            --grid-gutter: 1.5rem;
+            --layout-padding: 2rem 3vw;
+            --list-item-gap: 0.25rem;
+            --list-item-spacing: 0.15rem;
+            --paragraph-spacing: 1.25rem;
+            {{else match @custom.density "Spacious"}}
+            --content-spacing: 4rem;
+            --grid-gutter: 6rem;
+            --layout-padding: 6rem 6vw;
+            --list-item-gap: 1.5rem;
+            --list-item-spacing: 0.6rem;
+            --paragraph-spacing: 2.5rem;
+            {{else}}
+            --content-spacing: 2rem;
+            --grid-gutter: 4rem;
+            --layout-padding: 4rem 5vw;
+            --list-item-gap: 1rem;
+            --list-item-spacing: 0.35rem;
+            --paragraph-spacing: 1.75rem;
+            {{/match}}
         }
     </style>
 
     {{ghost_head}}
 
 </head>
+
 <body class="{{body_class}}">
 
-<input type="checkbox" id="gh-mobile-toggle" class="gh-mobile-toggle" />
+    <input type="checkbox" id="gh-mobile-toggle" class="gh-mobile-toggle" />
 
-<div class="gh-layout">
-    <aside class="gh-sidebar">
-        <header class="gh-head">
-            <div class="gh-head-brand">
-                {{#if @site.icon}}
+    <div class="gh-layout">
+        <aside class="gh-sidebar">
+            <header class="gh-head">
+                <div class="gh-head-brand">
+                    {{#if @site.icon}}
                     <a class="gh-head-avatar" href="{{@site.url}}">
                         <img src="{{@site.icon}}" alt="{{@site.title}}" />
                     </a>
-                {{/if}}
-                <a class="gh-head-logo" href="{{@site.url}}">
-                    {{#if @site.logo}}
-                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
-                    {{else}}
-                        {{@site.title}}
                     {{/if}}
-                </a>
-                {{#if @site.description}}
+                    <a class="gh-head-logo" href="{{@site.url}}">
+                        {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                        {{else}}
+                        {{@site.title}}
+                        {{/if}}
+                    </a>
+                    {{#if @site.description}}
                     <p class="gh-head-description">{{@site.description}}</p>
-                {{/if}}
-                <label class="gh-mobile-toggle-label" for="gh-mobile-toggle" aria-label="Menu">&#9776;</label>
-            </div>
-        </header>
-        <nav class="gh-head-menu" role="navigation">
-            {{navigation}}
-            <div class="gh-head-h-card p-author h-card" hidden>
-                <a class="p-name u-url" href="{{@site.url}}">{{@site.title}}</a>
-            </div>
-        </nav>
-    </aside>
-
-    <main class="gh-main">
-        {{{body}}}
-
-        <footer class="gh-foot">
-            <nav class="gh-foot-menu">
-                {{navigation type="secondary"}}
+                    {{/if}}
+                    <label class="gh-mobile-toggle-label" for="gh-mobile-toggle" aria-label="Menu">&#9776;</label>
+                </div>
+            </header>
+            <nav class="gh-head-menu" role="navigation">
+                {{navigation}}
+                <div class="gh-head-h-card p-author h-card" hidden>
+                    <a class="p-name u-url" href="{{@site.url}}">{{@site.title}}</a>
+                </div>
             </nav>
-            {{#if @site.members_enabled}}
-            <div class="gh-foot-subscribe">
-                <a href="{{@site.signup_url}}">{{t "Subscribe"}}</a>
-            </div>
-            {{/if}}
-            <div class="gh-foot-meta">
-                {{t "published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
-            </div>
-        </footer>
-    </main>
-</div>
+        </aside>
 
-{{ghost_foot}}
+        <main class="gh-main">
+            {{{body}}}
+
+            <footer class="gh-foot">
+                <nav class="gh-foot-menu">
+                    {{navigation type="secondary"}}
+                </nav>
+                {{#if @site.members_enabled}}
+                <div class="gh-foot-subscribe">
+                    <a href="{{@site.signup_url}}">{{t "Subscribe"}}</a>
+                </div>
+                {{/if}}
+                <div class="gh-foot-meta">
+                    {{t "published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    {{ghost_foot}}
 
 </body>
+
 </html>

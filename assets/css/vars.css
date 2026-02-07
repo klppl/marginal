@@ -18,13 +18,9 @@
 
     /* Layout */
     --sidebar-width: 220px;
-    --grid-gutter: 4rem;
-    --content-spacing: 2rem;
 
     /* Article list */
     --list-date-width: 120px;
-    --list-item-gap: 1rem;
-    --list-item-spacing: 0.35rem;
     --list-title-size: 1.1rem;
     --list-date-size: 1rem;
     --list-hover-bg: rgba(163, 179, 255, 0.35);
@@ -52,4 +48,95 @@
         --color-link-visited: #8eaaff;
         --list-hover-bg: rgba(163, 179, 255, 0.3);
     }
+}
+
+/* Catppuccin Mocha */
+html.palette-catppuccin-mocha {
+    --color-primary: #89b4fa;
+    --color-base: #cdd6f4;
+    --color-muted: #a6adc8;
+    --color-bg: #1e1e2e;
+    --color-bg-alt: #313244;
+    --color-border: #585b70;
+    --color-date: rgba(205, 214, 244, 0.5);
+    --color-link-visited: #b4befe;
+    --list-hover-bg: rgba(137, 180, 250, 0.15);
+}
+
+/* Dracula */
+html.palette-dracula {
+    --color-primary: #bd93f9;
+    --color-base: #f8f8f2;
+    --color-muted: #6272a4;
+    --color-bg: #282a36;
+    --color-bg-alt: #44475a;
+    --color-border: #6272a4;
+    --color-date: rgba(248, 248, 242, 0.5);
+    --color-link-visited: #ff79c6;
+    --list-hover-bg: rgba(189, 147, 249, 0.15);
+}
+
+/* Nord */
+html.palette-nord {
+    --color-primary: #88c0d0;
+    --color-base: #d8dee9;
+    --color-muted: #7b88a1;
+    --color-bg: #2e3440;
+    --color-bg-alt: #3b4252;
+    --color-border: #4c566a;
+    --color-date: rgba(216, 222, 233, 0.5);
+    --color-link-visited: #b48ead;
+    --list-hover-bg: rgba(136, 192, 208, 0.15);
+}
+
+/* Gruvbox */
+html.palette-gruvbox {
+    --color-primary: #fabd2f;
+    --color-base: #ebdbb2;
+    --color-muted: #a89984;
+    --color-bg: #282828;
+    --color-bg-alt: #3c3836;
+    --color-border: #504945;
+    --color-date: rgba(235, 219, 178, 0.5);
+    --color-link-visited: #d3869b;
+    --list-hover-bg: rgba(250, 189, 47, 0.12);
+}
+
+/* Tokyo Night */
+html.palette-tokyo-night {
+    --color-primary: #7aa2f7;
+    --color-base: #c0caf5;
+    --color-muted: #565f89;
+    --color-bg: #1a1b26;
+    --color-bg-alt: #24283b;
+    --color-border: #3b4261;
+    --color-date: rgba(192, 202, 245, 0.5);
+    --color-link-visited: #bb9af7;
+    --list-hover-bg: rgba(122, 162, 247, 0.12);
+}
+
+/* Rose Pine */
+html.palette-rose-pine {
+    --color-primary: #ebbcba;
+    --color-base: #e0def4;
+    --color-muted: #6e6a86;
+    --color-bg: #191724;
+    --color-bg-alt: #26233a;
+    --color-border: #403d52;
+    --color-date: rgba(224, 222, 244, 0.5);
+    --color-link-visited: #c4a7e7;
+    --list-hover-bg: rgba(235, 188, 186, 0.12);
+}
+
+/* Everforest */
+html.palette-everforest {
+    --color-primary: #a7c080;
+    --color-base: #d3c6aa;
+    --color-muted: #7a8478;
+    --color-bg: #2d353b;
+    --color-bg-alt: #343f44;
+    --color-border: #475258;
+    --color-date: rgba(211, 198, 170, 0.5);
+    --color-link-visited: #d699b6;
+    --list-hover-bg: rgba(167, 192, 128, 0.12);
 }

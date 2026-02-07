@@ -6,8 +6,8 @@
     display: grid;
     grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
     gap: var(--grid-gutter);
-    margin: 0;
-    padding: 4rem 5vw;
+    margin: var(--layout-margin, 0 auto);
+    padding: var(--layout-padding, 4rem 5vw);
     align-items: start;
 }
 
@@ -154,7 +154,7 @@
         display: none;
     }
 
-    .gh-mobile-toggle:checked ~ .gh-layout .gh-head-menu {
+    .gh-mobile-toggle:checked~.gh-layout .gh-head-menu {
         display: block;
         margin-bottom: 1rem;
     }
