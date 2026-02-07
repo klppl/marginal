@@ -8,7 +8,8 @@
       "Bash(npx rollup:*)",
       "Bash(npm test:*)",
       "Bash(npx gscan:*)",
-      "Bash(npm run test:*)"
+      "Bash(npm run test:*)",
+      "Bash(tree:*)"
     ]
   }
 }
