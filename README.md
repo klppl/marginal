@@ -1,4 +1,4 @@
-# Spalt
+# Marginal
 
 A retro-minimalist Ghost theme with IndieWeb microformats, dark mode, and zero JavaScript.
 
@@ -31,8 +31,6 @@ Two-column CSS Grid with navigation on the left and content on the right. Collap
 | `author.hbs` | Author archive with profile card |
 | `error.hbs` | Standalone error page |
 
-Custom templates by slug: `page-about.hbs`, `tag-news.hbs`, `author-jamie.hbs`.
-
 ## Development
 
 Requires [Ghost](https://ghost.org/) >= 5.0.0 and [Node.js](https://nodejs.org/).
@@ -40,7 +38,7 @@ Requires [Ghost](https://ghost.org/) >= 5.0.0 and [Node.js](https://nodejs.org/)
 Symlink the theme into your local Ghost install:
 
 ```bash
-ln -s /path/to/spalt /path/to/ghost/content/themes/spalt
+ln -s /path/to/marginal /path/to/ghost/content/themes/marginal
 ```
 
 Install dependencies and start developing:

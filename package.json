@@ -1,5 +1,5 @@
 {
-    "name": "spalt",
+    "name": "marginal",
     "description": "An IndieWeb-inspired retro-minimalist Ghost theme",
     "version": "1.0.0",
     "engines": {
@@ -7,13 +7,13 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Spalt",
+        "name": "Marginal",
         "email": "hello@example.com"
     },
     "scripts": {
         "dev": "rollup -c --environment BUILD:development -w",
         "build": "rollup -c --environment BUILD:production",
-        "zip": "npm run build && bestzip spalt-theme.zip assets/built/* assets/*.js assets/css/* *.hbs package.json locales/ partials/ members/",
+        "zip": "npm run build && bestzip marginal-theme.zip assets/built/* assets/*.js assets/css/* *.hbs package.json locales/ partials/ members/",
         "test": "npm run build && npx gscan .",
         "pretest": "npm run build"
     },
