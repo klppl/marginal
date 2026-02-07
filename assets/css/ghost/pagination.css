@@ -1,20 +1,54 @@
+/* Pagination
+/* ---------------------------------------------------------- */
+
+.gh-pagination {
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
 
 .gh-pagination .pagination {
     display: flex;
-    justify-content: space-between;
-    margin-block: 4vmin;
+    align-items: baseline;
+    gap: 1.5rem;
+    justify-content: flex-start;
 }
 
+/* Navigation links (Older / Newer) */
 .gh-pagination .pagination a {
-    font-size: 0.8rem;
+    font-size: var(--list-date-size);
     font-weight: 400;
-    color: var(--color-muted, var(--color-base));
+    color: var(--color-muted);
     text-decoration: none;
     border-bottom: none;
-    opacity: 0.6;
-    transition: opacity 0.15s ease;
+    padding: 0 4px;
+    margin: 0 -4px;
+    border-radius: 2px;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
 .gh-pagination .pagination a:hover {
-    opacity: 1;
+    color: var(--color-primary);
+    background-color: var(--list-hover-bg);
+}
+
+/* Page counter ("Page 1 of 2") */
+.gh-pagination .pagination .page-number {
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-date);
+}
+
+/* Mobile: stack vertically, maintain left alignment */
+@media (max-width: 50em) {
+    .gh-pagination {
+        padding-left: 0;
+    }
+
+    .gh-pagination .pagination {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 }

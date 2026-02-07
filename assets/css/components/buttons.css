@@ -4,19 +4,22 @@
 .gh-button {
     display: inline-block;
     min-width: 75px;
-    height: var(--height);
+    height: var(--input-height);
     padding: 0 2rem;
     border: 0;
-    border-radius: var(--radius);
+    border-radius: var(--input-radius);
     cursor: pointer;
-    font-family: var(--font-sans-serif);
+    font-family: var(--font-body);
     font-size: 1.4rem;
-    font-weight: var(--font-normal);
-    line-height: var(--height);
+    font-weight: 400;
+    line-height: var(--input-height);
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
     appearance: none;
+    color: inherit;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px currentColor;
     transition: 0.4s ease;
 }
 
@@ -25,15 +28,15 @@
 }
 
 .gh-button.gh-button-small {
-    height: calc(var(--height) * 0.9);
-    line-height: calc(var(--height) * 0.9);
+    height: calc(var(--input-height) * 0.9);
+    line-height: calc(var(--input-height) * 0.9);
     padding: 0 1.5rem;
     font-size: 1.2rem;
 }
 
 .gh-button.gh-button-large {
-    height: calc(var(--height) * 1.2);
-    line-height: calc(var(--height) * 1.2);
+    height: calc(var(--input-height) * 1.2);
+    line-height: calc(var(--input-height) * 1.2);
     padding: 0 2.5rem;
     font-size: 1.7rem;
 }
@@ -44,21 +47,15 @@
     opacity: 0.4;
 }
 
-.gh-button {
-    color: inherit;
-    background-color: transparent;
-    box-shadow: inset 0 0 0 2px currentColor
-}
-
 .gh-button:hover {
     text-decoration: none;
-    color: var(--color-primary) !important;
+    color: var(--color-primary);
     box-shadow: inset 0 0 0 2px var(--color-primary);
     transition: 0.2s ease;
 }
 
 .gh-button.gh-button-primary {
-    color: #fff !important;
+    color: #fff;
     background-color: var(--color-primary);
     box-shadow: none;
 }

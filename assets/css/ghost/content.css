@@ -19,7 +19,7 @@
 .gh-content > dl,
 .gh-content > blockquote {
     font-family: var(--font-body);
-    font-size: 1.075rem;
+    font-size: var(--content-size);
     line-height: 1.7;
 }
 

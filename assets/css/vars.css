@@ -1,12 +1,6 @@
 /* Variables
 /* ---------------------------------------------------------- */
 
-@font-face {
-    font-family: "Standard";
-    src: url("/assets/fonts/standard-book-webfont.woff2");
-    font-display: swap;
-}
-
 :root {
     /* Colors */
     --color-primary: oklch(0.56 0.1882 266.4);
@@ -18,16 +12,31 @@
     --color-muted: #888;
     --color-date: rgba(34, 34, 34, 0.4);
 
-    /* Fonts */
-    --font-body: "Standard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    --font-serif: var(--font-body);
-    --font-mono: Menlo, Courier, monospace;
+    /* Fonts — --global-font is set in default.hbs from Ghost Admin setting */
+    --font-body: var(--global-font, sans-serif);
+    --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Code', monospace;
 
     /* Layout */
-    --content-max-width: 50rem;
-    --content-width: 35rem;
-    --nav-width: 1fr;
-    --content-col: 3fr;
+    --sidebar-width: 220px;
+    --grid-gutter: 4rem;
+    --content-spacing: 2rem;
+
+    /* Article list */
+    --list-date-width: 120px;
+    --list-item-gap: 1rem;
+    --list-item-spacing: 0.35rem;
+    --list-title-size: 1.1rem;
+    --list-date-size: 1rem;
+    --list-hover-bg: rgba(163, 179, 255, 0.35);
+
+    /* Typography */
+    --body-size: 1.15rem;
+    --content-size: 1.075rem;
+    --meta-size: 0.8rem;
+
+    /* Form / button sizing */
+    --input-height: 42px;
+    --input-radius: 4px;
 }
 
 /* Dark mode */
@@ -41,5 +50,6 @@
         --color-border: #6690ff;
         --color-date: rgba(163, 179, 255, 0.5);
         --color-link-visited: #8eaaff;
+        --list-hover-bg: rgba(163, 179, 255, 0.3);
     }
 }

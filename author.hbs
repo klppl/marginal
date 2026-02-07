@@ -28,13 +28,13 @@
 {{/author}}
 
 <section class="h-feed">
-    <ul class="article-list">
+    <ul class="article-list" role="list">
     {{#foreach posts}}
         {{> "card"}}
     {{/foreach}}
     </ul>
 
-    <div class="gh-pagination">
+    <nav class="gh-pagination" aria-label="{{t "Pagination"}}">
         {{pagination}}
-    </div>
+    </nav>
 </section>

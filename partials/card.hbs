@@ -1,7 +1,8 @@
-{{!-- Simple list item for use in author/tag pages --}}
 <li class="h-entry">
     <time class="dt-published post-date" datetime="{{date format="YYYY-MM-DD"}}">
-        {{date format="DD MMM YYYY"}}
+        <span class="date-day">{{date format="DD"}}</span>
+        <span class="date-month">{{date format="MMM"}}</span>
+        <span class="date-year">{{date format="YYYY"}}</span>
     </time>
-    <a class="p-name u-url post-title" href="{{url}}">{{title}}</a>
+    <a class="p-name u-url post-title" href="{{url}}" aria-label="{{title}}">{{title}}</a>
 </li>

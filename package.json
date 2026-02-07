@@ -1,49 +1,29 @@
 {
-    "name": "ghost-starter-theme",
-    "description": "A starter theme for Ghost theme development",
-    "demo": "https://starter.ghost.io",
+    "name": "spalt",
+    "description": "An IndieWeb-inspired retro-minimalist Ghost theme",
     "version": "1.0.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "assets/screenshot-desktop.jpg"
+    "author": {
+        "name": "Spalt",
+        "email": "hello@example.com"
     },
     "scripts": {
         "dev": "rollup -c --environment BUILD:development -w",
         "build": "rollup -c --environment BUILD:production",
         "zip": "npm run build && bestzip spalt-theme.zip assets/built/* assets/*.js assets/css/* *.hbs package.json locales/ partials/ members/",
-        "test": "npx gscan .",
+        "test": "npm run build && npx gscan .",
         "pretest": "npm run build"
-    },
-    "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
-    },
-    "gpm": {
-        "type": "theme",
-        "categories": [
-            "Minimal",
-            "Magazine"
-        ]
     },
     "keywords": [
         "ghost",
         "theme",
-        "ghost-theme"
+        "ghost-theme",
+        "indieweb"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TryGhost/Starter.git"
-    },
-    "bugs": "https://github.com/TryGhost/Starter/issues",
-    "contributors": "https://github.com/TryGhost/Starter/graphs/contributors",
     "devDependencies": {
-        "@babel/core": "^7.21.0",
-        "@babel/preset-env": "^7.20.2",
-        "@rollup/plugin-babel": "^6.0.3",
         "@rollup/plugin-commonjs": "^29.0.0",
         "@rollup/plugin-node-resolve": "^16.0.0",
         "@rollup/plugin-terser": "^0.4.0",
@@ -60,14 +40,19 @@
     ],
     "config": {
         "card_assets": true,
-        "posts_per_page": 15,
+        "posts_per_page": 50,
+        "custom": {
+            "body_font": {
+                "type": "select",
+                "options": [
+                    "System Sans",
+                    "System Serif",
+                    "Monospace"
+                ],
+                "default": "System Sans"
+            }
+        },
         "image_sizes": {
-            "xxs": {
-                "width": 30
-            },
-            "xs": {
-                "width": 100
-            },
             "s": {
                 "width": 300
             },

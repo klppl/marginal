@@ -2,9 +2,11 @@
 /* ---------------------------------------------------------- */
 
 .gh-foot {
-    padding: 3rem 0 2rem;
-    font-size: 0.9rem;
-    opacity: 0.75;
+    margin-top: 4rem;
+    padding: 2rem 0;
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    opacity: 0.6;
 }
 
 .gh-foot a {
@@ -25,7 +27,7 @@
 
 .gh-foot-menu .nav a {
     text-decoration: none;
-    border-bottom: 0.1rem dotted var(--color-primary);
+    border-bottom: 0.1rem dotted currentColor;
 }
 
 .gh-foot-subscribe {
@@ -33,5 +35,5 @@
 }
 
 .gh-foot-meta {
-    margin: 0.5rem 0 0;
+    margin: 0.25rem 0 0;
 }

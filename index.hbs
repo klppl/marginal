@@ -1,18 +1,13 @@
 {{!< default}}
 
 <section class="h-feed">
-    <ul class="article-list">
+    <ul class="article-list" role="list">
     {{#foreach posts}}
-        <li class="h-entry">
-            <time class="dt-published post-date" datetime="{{date format="YYYY-MM-DD"}}">
-                {{date format="DD MMM YYYY"}}
-            </time>
-            <a class="p-name u-url post-title" href="{{url}}">{{title}}</a>
-        </li>
+        {{> "card"}}
     {{/foreach}}
     </ul>
 
-    <div class="gh-pagination">
+    <nav class="gh-pagination" aria-label="{{t "Pagination"}}">
         {{pagination}}
-    </div>
+    </nav>
 </section>
