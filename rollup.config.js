@@ -1,7 +1,4 @@
 import { defineConfig } from 'rollup';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
 import postcss from 'rollup-plugin-postcss';
 import atImport from 'postcss-import';
 import postcssPresetEnv from 'postcss-preset-env';
@@ -14,11 +11,8 @@ export default defineConfig({
         dir: "assets/built",
         sourcemap: true,
         format: 'iife',
-        plugins: [terser()]
     },
     plugins: [
-        commonjs(),
-        nodeResolve(),
         postcss({
             extract: true,
             sourceMap: true,
