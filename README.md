@@ -2,7 +2,7 @@
 
 A retro-minimalist Ghost theme with IndieWeb microformats, dark mode, and zero JavaScript.
 
-![Screenshot](assets/screenshot-desktop.jpg)
+![Screenshot](screenshot.png)
 
 ## Features
 
