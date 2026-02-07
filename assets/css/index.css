@@ -1,0 +1,195 @@
+/*
+
+This is a development CSS file that is compiled to a minified
+production stylesheet in assets/built/screen.css using: npm run dev
+
+*/
+
+/* Lib - Local component imports
+/* ---------------------------------------------------------- */
+
+/* Base components */
+@import "vars.css";
+@import "components/global.css";
+@import "components/forms.css";
+@import "components/buttons.css";
+
+/* Ghost components */
+@import "ghost/header.css";
+@import "ghost/content.css";
+@import "ghost/readmore.css";
+@import "ghost/members.css";
+@import "ghost/errors.css";
+@import "ghost/footer.css";
+@import "ghost/badge.css";
+@import "ghost/pagination.css";
+@import "ghost/comments.css";
+
+
+/* Main - Theme styles
+/* ---------------------------------------------------------- */
+
+.gh-main {
+    flex: 1 0 auto;
+}
+
+
+/* Article List (h-feed)
+/* ---------------------------------------------------------- */
+
+.article-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article-list .h-entry {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.post-date {
+    width: 90px;
+    flex-shrink: 0;
+    text-transform: capitalize;
+    font-family: ui-monospace, Menlo, Monaco, 'Cascadia Code', monospace;
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    font-variant-numeric: tabular-nums;
+}
+
+.post-title {
+    color: var(--color-primary);
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.post-title:hover {
+    border-bottom: 1px solid var(--color-primary);
+}
+
+
+/* Pagination
+/* ---------------------------------------------------------- */
+
+.gh-pagination {
+    margin: 2rem 0;
+}
+
+.gh-pagination .pagination {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Article / Post
+/* ---------------------------------------------------------- */
+
+.gh-article {
+    padding: 2rem 0;
+}
+
+.gh-header {
+    padding: 0 0 2rem 0;
+}
+
+.gh-post-meta {
+    display: block;
+    margin: 0.35rem 0 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-date);
+}
+
+.gh-post-meta a {
+    color: var(--color-primary);
+    font-style: italic;
+}
+
+.gh-title {
+    margin: 0 0 0;
+}
+
+.gh-excerpt {
+    margin: 0.5rem 0 0;
+    opacity: 0.8;
+}
+
+.gh-feature-image {
+    width: 100%;
+    margin: 2rem 0 0;
+}
+
+.gh-feature-image img {
+    width: 100%;
+}
+
+.gh-post-footer {
+    margin: 2rem 0;
+}
+
+.gh-post-authors {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+
+/* Page Head (tag/author archive)
+/* ---------------------------------------------------------- */
+
+.gh-page-head {
+    margin: 0;
+    padding: 2rem 0 1.5rem;
+}
+
+.gh-page-head > p {
+    margin: 0.3em 0 0;
+    opacity: 0.6;
+}
+
+.gh-page-image {
+    margin: 1.5rem 0 0;
+}
+
+
+/* Author Archive
+/* ---------------------------------------------------------- */
+
+.gh-author-image {
+    height: 4rem;
+    width: 4rem;
+    margin: 0 0 1rem;
+    border-radius: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.gh-author-meta {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+}
+
+.gh-author-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.gh-author-links a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.gh-author-links a + a:before {
+    display: block;
+    content: "";
+    margin: 0 0.5rem 0 0;
+    height: 1em;
+    width: 1px;
+    background: var(--color-border);
+    transform: rotate(20deg);
+}

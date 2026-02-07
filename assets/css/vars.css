@@ -1,0 +1,45 @@
+/* Variables
+/* ---------------------------------------------------------- */
+
+@font-face {
+    font-family: "Standard";
+    src: url("/assets/fonts/standard-book-webfont.woff2");
+    font-display: swap;
+}
+
+:root {
+    /* Colors */
+    --color-primary: oklch(0.56 0.1882 266.4);
+    --color-base: #222;
+    --color-bg: #fafafa;
+    --color-bg-alt: #f0f0f0;
+    --color-border: #ddd;
+    --color-link-visited: royalblue;
+    --color-muted: #888;
+    --color-date: rgba(34, 34, 34, 0.4);
+
+    /* Fonts */
+    --font-body: "Standard", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    --font-serif: var(--font-body);
+    --font-mono: Menlo, Courier, monospace;
+
+    /* Layout */
+    --content-max-width: 50rem;
+    --content-width: 35rem;
+    --nav-width: 1fr;
+    --content-col: 3fr;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-primary: #a3b3ff;
+        --color-base: #c4d5ff;
+        --color-muted: #8ea0ca;
+        --color-bg: #02003c;
+        --color-bg-alt: #0a0850;
+        --color-border: #6690ff;
+        --color-date: rgba(163, 179, 255, 0.5);
+        --color-link-visited: #8eaaff;
+    }
+}

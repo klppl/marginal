@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "WebFetch(domain:jamesg.blog)",
+      "Bash(npm run build:*)",
+      "Bash(npm install:*)",
+      "Bash(npx rollup:*)",
+      "Bash(npm test:*)"
+    ]
+  }
+}

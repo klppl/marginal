@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+    <script src="{{asset "built/index.js"}}" defer></script>
+
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+
+<input type="checkbox" id="gh-mobile-toggle" class="gh-mobile-toggle" />
+
+<div class="gh-layout">
+    <aside class="gh-sidebar">
+        <header class="gh-head">
+            <div class="gh-head-brand">
+                {{#if @site.icon}}
+                    <a class="gh-head-avatar" href="{{@site.url}}">
+                        <img src="{{@site.icon}}" alt="{{@site.title}}" />
+                    </a>
+                {{/if}}
+                <a class="gh-head-logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                    {{else}}
+                        {{@site.title}}
+                    {{/if}}
+                </a>
+                {{#if @site.description}}
+                    <p class="gh-head-description">{{@site.description}}</p>
+                {{/if}}
+                <label class="gh-mobile-toggle-label" for="gh-mobile-toggle" aria-label="Menu">&#9776;</label>
+            </div>
+        </header>
+        <nav class="gh-head-menu" role="navigation">
+            {{navigation}}
+            <div class="gh-head-h-card p-author h-card" hidden>
+                <a class="p-name u-url" href="{{@site.url}}">{{@site.title}}</a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="gh-main">
+        {{{body}}}
+    </main>
+</div>
+
+<footer class="gh-foot">
+    <nav class="gh-foot-menu">
+        {{navigation type="secondary"}}
+    </nav>
+    {{#if @site.members_enabled}}
+    <div class="gh-foot-subscribe">
+        <a href="{{@site.signup_url}}">{{t "Subscribe"}}</a>
+    </div>
+    {{/if}}
+    <div class="gh-foot-meta">
+        {{t "published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+    </div>
+</footer>
+
+{{ghost_foot}}
+
+</body>
+</html>

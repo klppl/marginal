@@ -1,0 +1,40 @@
+{{!< default}}
+
+{{#author}}
+<header class="gh-page-head h-card">
+    {{#if profile_image}}
+        <img class="gh-author-image u-photo" src="{{profile_image}}" alt="{{name}}" />
+    {{/if}}
+
+    <h1 class="p-name">{{name}}</h1>
+    {{#if bio}}
+        <p class="p-note">{{bio}}</p>
+    {{/if}}
+
+    <div class="gh-author-meta">
+        <div class="gh-author-links">
+            {{#if website}}
+                <a class="u-url" href="{{website}}" target="_blank" rel="noopener me">{{t "Website"}}</a>
+            {{/if}}
+            {{#if twitter}}
+                <a href="{{social_url type="twitter"}}" target="_blank" rel="noopener me">{{t "Twitter/X handle"}}</a>
+            {{/if}}
+            {{#if facebook}}
+                <a href="{{social_url type="facebook"}}" target="_blank" rel="noopener me">{{t "Facebook page"}}</a>
+            {{/if}}
+        </div>
+    </div>
+</header>
+{{/author}}
+
+<section class="h-feed">
+    <ul class="article-list">
+    {{#foreach posts}}
+        {{> "card"}}
+    {{/foreach}}
+    </ul>
+
+    <div class="gh-pagination">
+        {{pagination}}
+    </div>
+</section>

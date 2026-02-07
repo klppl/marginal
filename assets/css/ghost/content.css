@@ -1,0 +1,155 @@
+/* Content & Typography
+/* ---------------------------------------------------------- */
+
+.gh-content > * + * {
+    margin-top: 1.75rem;
+}
+
+.gh-content [id]:not(:first-child) {
+    margin: 2em 0 0;
+}
+
+.gh-content > [id] + * {
+    margin-top: 1rem;
+}
+
+.gh-content > p,
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl,
+.gh-content > blockquote {
+    font-family: var(--font-body);
+    font-size: 1.075rem;
+    line-height: 1.7;
+}
+
+.gh-content > ul,
+.gh-content > ol,
+.gh-content > dl {
+    padding-left: 1.9em;
+}
+
+.gh-content hr {
+    margin-top: 3rem;
+}
+
+.gh-content hr + * {
+    margin-top: 3rem !important;
+}
+
+.gh-content blockquote {
+    position: relative;
+    font-style: italic;
+    padding-left: 1.5em;
+    border-left: 0.25rem solid var(--color-primary);
+}
+
+.gh-content :not(pre) code {
+    vertical-align: middle;
+    padding: 0.15em 0.4em;
+    border: 1px solid var(--color-border);
+    font-weight: 400;
+    font-size: 0.9em;
+    line-height: 1em;
+    color: var(--color-primary);
+    background: var(--color-bg-alt);
+    border-radius: 0.25em;
+    font-family: var(--font-mono);
+}
+
+.gh-content > pre {
+    overflow-x: auto;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-alt);
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-border);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+
+/* Cards
+/* ---------------------------------------------------------- */
+
+.gh-content :not(.kg-card):not([id]) + .kg-card {
+    margin-top: 2rem;
+}
+
+.gh-content .kg-card + :not(.kg-card) {
+    margin-top: 2rem;
+}
+
+figcaption {
+    padding: 0.75rem 0 0;
+    text-align: center;
+    color: var(--color-base);
+    opacity: 0.6;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.kg-embed-card > :where(iframe[src*="youtube.com"],iframe[src*="vimeo.com"]) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+.kg-image-card img {
+    margin: auto;
+}
+
+
+/* Card captions
+/* ---------------------------------------------------------- */
+
+.kg-width-full.kg-card-hascaption {
+    display: grid;
+    grid-template-columns: inherit;
+}
+
+.kg-width-wide.kg-card-hascaption img {
+    grid-column: wide-start / wide-end;
+}
+.kg-width-full.kg-card-hascaption img {
+    grid-column: 1 / -1;
+}
+
+.kg-width-full.kg-card-hascaption figcaption {
+    grid-column: main-start / main-end;
+}
+
+
+/* Tables
+/* ---------------------------------------------------------- */
+
+.gh-content table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.gh-content th {
+    padding: 0.5em 0.8em;
+    text-align: left;
+    font-size: .75em;
+    text-transform: uppercase;
+}
+
+.gh-content td {
+    padding: 0.4em 0.7em;
+}
+
+.gh-content tbody tr:nth-child(2n + 1) {
+    background-color: var(--color-bg-alt);
+}
+
+.gh-content tbody tr:last-child {
+    border-bottom: 1px solid var(--color-border);
+}

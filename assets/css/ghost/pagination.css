@@ -1,0 +1,20 @@
+
+.gh-pagination .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-block: 4vmin;
+}
+
+.gh-pagination .pagination a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--color-muted, var(--color-base));
+    text-decoration: none;
+    border-bottom: none;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+}
+
+.gh-pagination .pagination a:hover {
+    opacity: 1;
+}

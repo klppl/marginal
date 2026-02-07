@@ -1,0 +1,37 @@
+/* Global Footer
+/* ---------------------------------------------------------- */
+
+.gh-foot {
+    padding: 3rem 0 2rem;
+    font-size: 0.9rem;
+    opacity: 0.75;
+}
+
+.gh-foot a {
+    color: inherit;
+}
+
+.gh-foot-menu {
+    margin-bottom: 0.5rem;
+}
+
+.gh-foot-menu .nav {
+    display: inline-flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 1rem;
+    padding: 0;
+}
+
+.gh-foot-menu .nav a {
+    text-decoration: none;
+    border-bottom: 0.1rem dotted var(--color-primary);
+}
+
+.gh-foot-subscribe {
+    margin: 0.5rem 0;
+}
+
+.gh-foot-meta {
+    margin: 0.5rem 0 0;
+}

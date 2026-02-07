@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{asset "built/index.css"}}" />
+
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+
+</head>
+
+<body class="{{body_class}}">
+
+<header class="gh-head">
+    <div class="gh-head-brand">
+        <a class="gh-head-logo" href="{{@site.url}}">
+            {{#if @site.logo}}
+                <img src="{{@site.logo}}" alt="{{@site.title}}" />
+            {{else}}
+                {{@site.title}}
+            {{/if}}
+        </a>
+    </div>
+</header>
+
+<main class="gh-main" style="padding: 2rem 1.5rem;">
+
+    <h1>{{statusCode}}</h1>
+    <p>{{message}}</p>
+    <p><a href="{{@site.url}}">{{t "Go to the front page"}} &rarr;</a></p>
+
+    {{#if errorDetails}}
+    <section class="gh-error-stack">
+        <h4>Theme errors:</h4>
+        <ul>
+            {{#foreach errorDetails}}
+            <li>
+                <h5>{{{rule}}}</h5>
+                {{#foreach failures}}
+                <span><strong>Ref:</strong> {{ref}}</span><br>
+                <span><strong>Message:</strong> {{message}}</span>
+                {{/foreach}}
+            </li>
+            {{/foreach}}
+        </ul>
+    </section>
+    {{/if}}
+
+</main>
+
+<footer class="gh-foot">
+    <nav class="gh-foot-menu">
+        {{navigation type="secondary"}}
+    </nav>
+    <div class="gh-foot-meta">
+        {{t "published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+    </div>
+</footer>
+
+{{ghost_foot}}
+
+</body>
+</html>

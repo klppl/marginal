@@ -1,0 +1,35 @@
+/* Read More
+/* ---------------------------------------------------------- */
+
+.gh-readmore {
+    padding: 2rem 0;
+}
+
+.gh-readmore-inner {
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.gh-readmore-prev {
+    text-align: right;
+}
+
+.gh-readmore a {
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 0.1rem dotted var(--color-primary);
+}
+
+.gh-readmore a:hover {
+    background-color: var(--color-bg-alt);
+}
+
+@media (max-width: 40em) {
+    .gh-readmore-inner {
+        grid-template-columns: 1fr;
+    }
+    .gh-readmore-prev {
+        text-align: left;
+    }
+}
