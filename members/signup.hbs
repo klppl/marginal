@@ -15,7 +15,7 @@
             <h1 class="gh-checkout-title">{{t "Choose your subscription"}}</h1>
             <p>{{t "Unlock full access to {sitename} and see the entire library of members-only content & updates" sitename=@site.title}}</p>
             <div class="gh-checkout-box">
-                {{#get "tiers" include="monthly_price, yearly_price" limit="all" as |tiers|}}
+                {{#get "tiers" include="monthly_price, yearly_price" limit="10" as |tiers|}}
                 {{#foreach tiers}}
                 <div class="gh-checkout-plan">
                     <header class="gh-checkout-plan-header">

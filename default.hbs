@@ -93,7 +93,9 @@
             <nav class="gh-head-menu" role="navigation">
                 {{navigation}}
                 <div class="gh-head-h-card p-author h-card" hidden>
-                    <a class="p-name u-url" href="{{@site.url}}">{{@site.title}}</a>
+                    <a class="p-name u-url u-uid" href="{{@site.url}}">{{@site.title}}</a>
+                    {{#if @site.icon}}<img class="u-photo" src="{{@site.icon}}" alt="{{@site.title}}" />{{/if}}
+                    {{#if @site.description}}<span class="p-note">{{@site.description}}</span>{{/if}}
                 </div>
             </nav>
         </aside>

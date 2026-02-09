@@ -28,6 +28,7 @@
 {{/author}}
 
 <section class="h-feed">
+    <data class="p-name" value="{{t "Posts by"}} {{primary_author.name}}" hidden></data>
     <ul class="article-list" role="list">
     {{#foreach posts}}
         {{> "card"}}

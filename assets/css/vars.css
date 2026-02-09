@@ -16,6 +16,10 @@
     --font-body: var(--global-font, sans-serif);
     --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Code', monospace;
 
+    /* Ghost custom font support */
+    --gh-font-heading: var(--font-body);
+    --gh-font-body: var(--font-body);
+
     /* Layout */
     --sidebar-width: 220px;
 

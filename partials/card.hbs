@@ -5,4 +5,10 @@
         <span class="date-year">{{date format="YYYY"}}</span>
     </time>
     <a class="p-name u-url post-title" href="{{url}}" aria-label="{{title}}">{{title}}</a>
+    {{#if primary_tag}}
+        <data class="p-category" value="{{primary_tag.name}}" hidden></data>
+    {{/if}}
+    <span class="p-author h-card" hidden>
+        <a class="p-name u-url" href="{{primary_author.url}}">{{primary_author.name}}</a>
+    </span>
 </li>

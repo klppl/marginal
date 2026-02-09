@@ -104,6 +104,14 @@ figcaption {
 
 .kg-image-card img {
     margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.kg-image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
