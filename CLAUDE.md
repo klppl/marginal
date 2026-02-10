@@ -48,10 +48,6 @@ The site uses a 2-column CSS Grid (`1fr 3fr`) with navigation on the left and co
 
 Templates include `h-feed`, `h-entry`, `h-card`, `p-name`, `u-url`, `u-uid`, `dt-published`, `e-content`, `p-author`, `p-summary` classes for IndieWeb compatibility. A hidden `h-card` for the site is in the nav area of `default.hbs`.
 
-### Deployment
-
-`.github/workflows/deploy-theme.yml` auto-deploys on push to master/main using `TryGhost/action-deploy-theme@v1`. Requires `GHOST_ADMIN_API_URL` and `GHOST_ADMIN_API_KEY` secrets.
-
 ### Local Development Setup
 
 Symlink this theme into a local Ghost install's `content/themes/` directory, then run `npm run dev`.

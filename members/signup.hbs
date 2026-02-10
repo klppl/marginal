@@ -37,10 +37,10 @@
                         {{/if}}
 
                         {{#if monthly_price}}
-                        <a class="button primary fit" href="javascript:void(0)" data-members-plan="Monthly">{{t "Choose this plan"}}</a>
+                        <button class="gh-button gh-button-primary gh-button-fit" type="button" data-members-plan="Monthly">{{t "Choose this plan"}}</button>
                         {{/if}}
                         {{#if yearly_price}}
-                        <a class="button primary fit" href="javascript:void(0)" data-members-plan="Yearly">{{t "Choose this plan"}}</a>
+                        <button class="gh-button gh-button-primary gh-button-fit" type="button" data-members-plan="Yearly">{{t "Choose this plan"}}</button>
                         {{/if}}
                     </div>
                 </div>
@@ -56,8 +56,9 @@
             <h1 class="gh-auth-title">{{t "Signup to {sitename}" sitename=@site.title}}</h1>
             <p>{{@site.description}}</p>
             <div class="gh-auth-box">
-                <input aria-label="Email Address" class="gh-input" data-members-email type="email"
-                    placeholder="youremail@example.com" required="true" autocomplete="false" autofocus />
+                <label for="signup-email" class="gh-visually-hidden">{{t "Email Address"}}</label>
+                <input id="signup-email" class="gh-input" data-members-email type="email"
+                    placeholder="youremail@example.com" required="true" autocomplete="off" autofocus />
                 <button class="gh-button gh-button-primary" type="submit">
                     <span class="gh-button-content">{{t "Continue"}}</span>
                     <span class="gh-button-loader">{{> "icons/loader"}}</span>

@@ -2,14 +2,32 @@
 
 {{#post}}
 
+{{#if @custom.show_reading_progress}}
+<div class="gh-progress" aria-hidden="true"></div>
+{{/if}}
+
+{{#if @custom.show_breadcrumbs}}
+<nav class="gh-breadcrumb h-breadcrumb" aria-label="{{t "Breadcrumb"}}">
+    <ol>
+        <li><a href="{{@site.url}}">{{@site.title}}</a></li>
+        {{#if primary_tag}}
+        <li><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></li>
+        {{/if}}
+        <li><span aria-current="page">{{title}}</span></li>
+    </ol>
+</nav>
+{{/if}}
+
 <article class="gh-article h-entry {{post_class}}">
 
     <header class="gh-header">
         <h1 class="gh-title p-name">{{title}}</h1>
         <div class="gh-post-meta">
-            <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+            <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}"><span class="date-day">{{date format="DD"}}</span> <span class="date-month">{{date format="MMM"}}</span> <span class="date-year">{{date format="YYYY"}}</span></time>
+            {{#if @custom.show_reading_time}}
             {{#if reading_time}}
                 &middot; {{reading_time}}
+            {{/if}}
             {{/if}}
         </div>
 
@@ -19,13 +37,25 @@
 
         {{#if feature_image}}
         <figure class="gh-feature-image">
-            <img class="u-featured" src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+            <img class="u-featured u-photo"
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(max-width: 50em) 100vw, 75vw"
+                src="{{img_url feature_image size="l"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                loading="lazy" />
             {{#if feature_image_caption}}
                 <figcaption>{{feature_image_caption}}</figcaption>
             {{/if}}
         </figure>
         {{/if}}
     </header>
+
+    {{#if @custom.show_toc}}
+    <nav class="gh-toc" aria-label="{{t "Table of contents"}}"></nav>
+    {{/if}}
 
     <div class="gh-content e-content">
         {{content}}
@@ -40,6 +70,7 @@
         </div>
         {{/if}}
 
+        {{#if @custom.show_author_byline}}
         <div class="gh-post-authors">
             {{#foreach authors}}
                 <span class="p-author h-card">
@@ -47,6 +78,7 @@
                 </span>
             {{/foreach}}
         </div>
+        {{/if}}
 
         {{#if comments}}
         <section class="gh-post-comments">
@@ -59,6 +91,31 @@
 
 </article>
 
+{{#if @custom.show_related_posts}}
+{{#if primary_tag}}
+{{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{id}}" limit="3" as |related|}}
+{{#if related}}
+<aside class="gh-related">
+    <h2 class="gh-related-title">{{t "Related posts"}}</h2>
+    <ul class="article-list" role="list">
+        {{#foreach related}}
+        <li class="h-entry">
+            <time class="dt-published post-date" datetime="{{date format="YYYY-MM-DD"}}">
+                <span class="date-day">{{date format="DD"}}</span>
+                <span class="date-month">{{date format="MMM"}}</span>
+                <span class="date-year">{{date format="YYYY"}}</span>
+            </time>
+            <a class="p-name u-url post-title" href="{{url}}" aria-label="{{title}}">{{title}}</a>
+        </li>
+        {{/foreach}}
+    </ul>
+</aside>
+{{/if}}
+{{/get}}
+{{/if}}
+{{/if}}
+
+{{#if @custom.show_prev_next}}
 <aside class="gh-readmore">
     <div class="gh-readmore-inner">
         <div class="gh-readmore-next">
@@ -69,5 +126,6 @@
         </div>
     </div>
 </aside>
+{{/if}}
 
 {{/post}}

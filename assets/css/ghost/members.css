@@ -48,6 +48,32 @@
     }
 }
 
+/* Account Box
+/* ---------------------------------------------------------- */
+
+.account-box {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 10vmin;
+    text-align: center;
+}
+
+.account-box-title {
+    margin: 0 0 0.3em;
+    font-size: 3rem;
+}
+
+.account-box p {
+    margin: 10px 0 2rem;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--color-muted);
+}
+
+.account-box .authbox-signup {
+    margin-top: 2rem;
+}
+
 /* Members Forms
 /* ---------------------------------------------------------- */
 

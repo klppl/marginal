@@ -12,7 +12,7 @@
 
         {{#if feature_image}}
             <figure class="gh-feature-image">
-                <img class="u-featured" src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" />
+                <img class="u-featured u-photo" src="{{feature_image}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" loading="lazy" />
                 {{#if feature_image_caption}}
                     <figcaption>{{feature_image_caption}}</figcaption>
                 {{/if}}

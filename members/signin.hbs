@@ -15,7 +15,8 @@
             <h1 class="gh-auth-title">{{t "Welcome back!"}}</h1>
             <p>{{t "Sign into your account again for full access"}}</p>
             <div class="gh-auth-box">
-                <input aria-label="Email Address" class="gh-input" data-members-email type="email" placeholder="{{t "Your email address"}}" required="true" autocomplete="false" autofocus />
+                <label for="signin-email" class="gh-visually-hidden">{{t "Email Address"}}</label>
+                <input id="signin-email" class="gh-input" data-members-email type="email" placeholder="{{t "Your email address"}}" required="true" autocomplete="off" autofocus />
                 <button class="gh-button gh-button-primary" type="submit">
                     <span class="gh-button-content">{{t "Sign in"}}</span>
                     <span class="gh-button-loader">{{> "icons/loader"}}</span>

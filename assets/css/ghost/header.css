@@ -123,9 +123,32 @@
 .gh-mobile-toggle-label {
     display: none;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0.25rem 0.5rem;
     color: var(--color-base);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    line-height: 1;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.gh-mobile-toggle-label:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+/* Toggle icon swap: hamburger ↔ close */
+.gh-toggle-close {
+    display: none;
+    font-size: 1.4rem;
+}
+
+.gh-mobile-toggle:checked ~ .gh-layout .gh-toggle-open {
+    display: none;
+}
+
+.gh-mobile-toggle:checked ~ .gh-layout .gh-toggle-close {
+    display: inline;
 }
 
 /* Mobile layout */
@@ -133,41 +156,105 @@
     .gh-layout {
         grid-template-columns: 1fr;
         padding: 1.5rem 1.5rem;
-        gap: 1.5rem;
+        gap: 1rem;
     }
 
     .gh-sidebar {
         position: static;
-        align-items: flex-start;
+        align-items: stretch;
         text-align: left;
     }
 
+    /* Compact header row: avatar + name on left, hamburger on right */
     .gh-head-brand {
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.6rem;
+        margin-bottom: 0;
+    }
+
+    .gh-head-avatar {
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .gh-head-avatar img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .gh-head-logo {
+        font-size: 1rem;
+        flex-grow: 1;
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Description hidden in header row, shown in nav panel */
+    .gh-head-brand > .gh-head-description {
+        display: none;
     }
 
     .gh-mobile-toggle-label {
-        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-left: auto;
     }
 
+    /* Nav panel: hidden by default */
     .gh-head-menu {
         display: none;
     }
 
-    .gh-mobile-toggle:checked~.gh-layout .gh-head-menu {
+    /* Nav panel: revealed on toggle */
+    .gh-mobile-toggle:checked ~ .gh-layout .gh-head-menu {
         display: block;
-        margin-bottom: 1rem;
+        margin-top: 0.75rem;
+        padding: 0.75rem 1rem;
+        background: var(--color-bg-alt);
+        border: 1px solid var(--color-border);
+        border-radius: 6px;
+    }
+
+    /* Show description inside nav panel */
+    .gh-mobile-toggle:checked ~ .gh-layout .gh-head-menu::before {
+        content: attr(data-description);
+        display: block;
+        font-size: 0.75rem;
+        font-style: italic;
+        color: var(--color-muted);
+        opacity: 0.7;
+        margin-bottom: 0.6rem;
+        padding-bottom: 0.6rem;
+        border-bottom: 1px solid var(--color-border);
     }
 
     .gh-head-menu .nav {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: flex-start;
-        gap: 0.5rem;
+        gap: 0.15rem;
     }
 
     .gh-head-menu .nav a {
         display: inline-block;
         margin-right: 0;
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+        border-radius: 4px;
+    }
+
+    .gh-head-menu .nav a:hover {
+        background-color: var(--list-hover-bg);
+    }
+
+    /* Toggle label changes to X when open */
+    .gh-mobile-toggle:checked ~ .gh-layout .gh-mobile-toggle-label {
+        color: var(--color-primary);
+        border-color: var(--color-primary);
     }
 }

@@ -85,6 +85,61 @@
                 ],
                 "default": "Default"
             },
+            "show_excerpts": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_reading_progress": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_toc": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_related_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_breadcrumbs": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_reading_time": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_prev_next": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_ghost_badge": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "show_author_byline": {
+                "type": "boolean",
+                "default": true,
+                "group": "design"
+            },
+            "sidebar_width": {
+                "type": "select",
+                "options": [
+                    "Narrow",
+                    "Normal",
+                    "Wide"
+                ],
+                "default": "Normal",
+                "group": "design"
+            },
             "layout_alignment": {
                 "type": "select",
                 "options": [

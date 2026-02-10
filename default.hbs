@@ -5,11 +5,16 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="{{#match @custom.color_palette "Catppuccin Mocha"}}#1e1e2e{{else match @custom.color_palette "Dracula"}}#282a36{{else match @custom.color_palette "Nord"}}#2e3440{{else match @custom.color_palette "Gruvbox"}}#282828{{else match @custom.color_palette "Tokyo Night"}}#1a1b26{{else match @custom.color_palette "Rose Pine"}}#191724{{else match @custom.color_palette "Everforest"}}#2d353b{{else}}#fafafa{{/match}}" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="{{#match @custom.color_palette "Catppuccin Mocha"}}#1e1e2e{{else match @custom.color_palette "Dracula"}}#282a36{{else match @custom.color_palette "Nord"}}#2e3440{{else match @custom.color_palette "Gruvbox"}}#282828{{else match @custom.color_palette "Tokyo Night"}}#1a1b26{{else match @custom.color_palette "Rose Pine"}}#191724{{else match @custom.color_palette "Everforest"}}#2d353b{{else}}#02003c{{/match}}" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="{{asset "built/index.css"}}" />
     <script src="{{asset "built/index.js"}}" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     {{#match @custom.body_font "Source Sans"}}
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     {{else match @custom.body_font "DM Sans"}}
@@ -35,6 +40,7 @@
             --global-font: {{#match @custom.body_font "Source Sans"}}"Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif{{else match @custom.body_font "DM Sans"}}"DM Sans", -apple-system, BlinkMacSystemFont, sans-serif{{else match @custom.body_font "Space Grotesk"}}"Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif{{else match @custom.body_font "Libre Baskerville"}}"Libre Baskerville", Georgia, "Times New Roman", serif{{else match @custom.body_font "JetBrains Mono"}}"JetBrains Mono", ui-monospace, Menlo, Monaco, monospace{{else match @custom.body_font "IBM Plex Mono"}}"IBM Plex Mono", ui-monospace, Menlo, Monaco, monospace{{else match @custom.body_font "Courier Prime"}}"Courier Prime", "Courier New", Courier, monospace{{else}}"Inter", -apple-system, BlinkMacSystemFont, sans-serif{{/match}};
             --body-size: {{#match @custom.body_font_size "Small"}}0.95rem{{else match @custom.body_font_size "Large"}}1.25rem{{else}}1.15rem{{/match}};
             --layout-margin: {{#match @custom.layout_alignment "Left"}}0{{else match @custom.layout_alignment "Off-center"}}0 auto 0 5vw{{else}}0 auto{{/match}};
+            --sidebar-width: {{#match @custom.sidebar_width "Narrow"}}180px{{else match @custom.sidebar_width "Wide"}}260px{{else}}220px{{/match}};
             {{#match @custom.density "Compact"}}
             --content-spacing: 1rem;
             --grid-gutter: 1.5rem;
@@ -87,10 +93,13 @@
                     {{#if @site.description}}
                     <p class="gh-head-description">{{@site.description}}</p>
                     {{/if}}
-                    <label class="gh-mobile-toggle-label" for="gh-mobile-toggle" aria-label="Menu">&#9776;</label>
+                    <label class="gh-mobile-toggle-label" for="gh-mobile-toggle" aria-label="Menu">
+                        <span class="gh-toggle-open">&#9776;</span>
+                        <span class="gh-toggle-close">&times;</span>
+                    </label>
                 </div>
             </header>
-            <nav class="gh-head-menu" role="navigation">
+            <nav class="gh-head-menu" role="navigation" {{#if @site.description}}data-description="{{@site.description}}"{{/if}}>
                 {{navigation}}
                 <div class="gh-head-h-card p-author h-card" hidden>
                     <a class="p-name u-url u-uid" href="{{@site.url}}">{{@site.title}}</a>
@@ -112,9 +121,11 @@
                     <a href="{{@site.signup_url}}">{{t "Subscribe"}}</a>
                 </div>
                 {{/if}}
+                {{#if @custom.show_ghost_badge}}
                 <div class="gh-foot-meta">
                     {{t "published with"}} <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
                 </div>
+                {{/if}}
             </footer>
         </main>
     </div>

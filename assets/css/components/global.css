@@ -193,6 +193,44 @@ p {
     text-wrap: pretty;
 }
 
+/* Focus-visible styles for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+a:focus-visible {
+    border-radius: 2px;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    border-radius: var(--input-radius, 4px);
+}
+
+/* Visually hidden (accessible to screen readers) */
+.gh-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Smooth color palette transitions */
+body,
+a,
+.gh-head-menu .nav a,
+.gh-button {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     * {
@@ -200,5 +238,76 @@ p {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+/* Print stylesheet
+/* ---------------------------------------------------------- */
+@media print {
+    html {
+        border-top: none;
+        font-size: 12pt;
+    }
+
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .gh-sidebar,
+    .gh-mobile-toggle,
+    .gh-foot,
+    .gh-readmore,
+    .gh-related,
+    .gh-breadcrumb,
+    .gh-progress,
+    .gh-post-comments,
+    .gh-pagination {
+        display: none !important;
+    }
+
+    .gh-layout {
+        display: block;
+        padding: 0;
+    }
+
+    .gh-main {
+        max-width: 100%;
+    }
+
+    a {
+        color: #000;
+        text-decoration: underline;
+        border-bottom: none;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        color: #666;
+    }
+
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after,
+    a[class]::after {
+        content: "";
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    .gh-content pre {
+        white-space: pre-wrap;
+        border: 1px solid #ccc;
+    }
+
+    .gh-feature-image {
+        break-inside: avoid;
+    }
+
+    h1, h2, h3 {
+        color: #000;
+        page-break-after: avoid;
     }
 }

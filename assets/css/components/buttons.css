@@ -61,5 +61,7 @@
 }
 
 .gh-button.gh-button-primary:hover {
+    color: #fff;
     background-color: var(--color-primary);
+    opacity: 0.85;
 }

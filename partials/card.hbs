@@ -5,6 +5,13 @@
         <span class="date-year">{{date format="YYYY"}}</span>
     </time>
     <a class="p-name u-url post-title" href="{{url}}" aria-label="{{title}}">{{title}}</a>
+    {{#if @custom.show_excerpts}}
+    {{#if custom_excerpt}}
+        <span class="p-summary post-excerpt">{{custom_excerpt}}</span>
+    {{else if excerpt}}
+        <span class="p-summary post-excerpt">{{excerpt words="20"}}</span>
+    {{/if}}
+    {{/if}}
     {{#if primary_tag}}
         <data class="p-category" value="{{primary_tag.name}}" hidden></data>
     {{/if}}

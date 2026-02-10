@@ -183,3 +183,170 @@ production stylesheet in assets/built/index.css using: npm run build
     background: var(--color-border);
     transform: rotate(20deg);
 }
+
+
+/* Reading Progress Bar
+/* ---------------------------------------------------------- */
+
+.gh-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 9999;
+    background: transparent;
+}
+
+.gh-progress::after {
+    content: "";
+    display: block;
+    height: 100%;
+    background: var(--color-primary);
+    width: 0%;
+    animation: progress-grow auto linear;
+    animation-timeline: scroll();
+}
+
+@keyframes progress-grow {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+
+/* Breadcrumb Navigation
+/* ---------------------------------------------------------- */
+
+.gh-breadcrumb {
+    margin-bottom: var(--content-spacing);
+    font-size: var(--meta-size);
+    color: var(--color-muted);
+}
+
+.gh-breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gh-breadcrumb li:not(:last-child)::after {
+    content: "/";
+    margin-left: 0.25rem;
+    color: var(--color-border);
+}
+
+.gh-breadcrumb a {
+    color: var(--color-muted);
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.gh-breadcrumb a:hover {
+    color: var(--color-primary);
+}
+
+.gh-breadcrumb [aria-current="page"] {
+    color: var(--color-primary);
+}
+
+
+/* Search
+/* ---------------------------------------------------------- */
+
+.gh-search {
+    padding: var(--content-spacing) 0;
+}
+
+.gh-search-title {
+    margin: 0 0 1.5rem;
+}
+
+
+/* Related Posts
+/* ---------------------------------------------------------- */
+
+.gh-related {
+    margin-top: var(--content-spacing);
+    padding-top: var(--content-spacing);
+    border-top: 1px solid var(--color-border);
+}
+
+.gh-related-title {
+    margin: 0 0 1rem;
+    font-size: 1.1rem;
+}
+
+
+/* Post Excerpts in Article List
+/* ---------------------------------------------------------- */
+
+.post-excerpt {
+    display: none;
+}
+
+.article-list .h-entry {
+    flex-wrap: wrap;
+}
+
+.article-list .post-excerpt {
+    display: block;
+    width: 100%;
+    padding-left: calc(2ch + 3ch + 4ch + 1.5ch + var(--list-item-gap));
+    font-size: var(--meta-size);
+    color: var(--color-muted);
+    line-height: 1.4;
+    margin-top: -0.1rem;
+    margin-bottom: 0.25rem;
+}
+
+@media (max-width: 50em) {
+    .article-list .post-excerpt {
+        padding-left: 0;
+    }
+}
+
+
+/* Table of Contents
+/* ---------------------------------------------------------- */
+
+.gh-toc {
+    margin-bottom: var(--content-spacing);
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 0.25rem;
+    font-size: var(--meta-size);
+}
+
+.gh-toc:empty {
+    display: none;
+}
+
+.gh-toc ol {
+    margin: 0;
+    padding-left: 1.5em;
+    counter-reset: toc;
+}
+
+.gh-toc li {
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+}
+
+.gh-toc li.toc-h3 {
+    padding-left: 1em;
+}
+
+.gh-toc a {
+    color: var(--color-muted);
+    text-decoration: none;
+    border-bottom: none;
+}
+
+.gh-toc a:hover {
+    color: var(--color-primary);
+}

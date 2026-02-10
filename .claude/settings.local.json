@@ -9,7 +9,8 @@
       "Bash(npm test:*)",
       "Bash(npx gscan:*)",
       "Bash(npm run test:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(grep:*)"
     ]
   }
 }
