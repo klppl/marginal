@@ -304,6 +304,23 @@ production stylesheet in assets/built/index.css using: npm run build
 }
 
 @media (max-width: 50em) {
+    .article-list .h-entry {
+        display: block;
+        margin-bottom: var(--list-item-spacing);
+        font-size: 0.85rem;
+    }
+
+    .post-date {
+        display: inline-grid;
+        margin-right: 0.5ch;
+        font-size: 0.8rem;
+    }
+
+    .post-title {
+        display: inline;
+        font-size: 0.85rem;
+    }
+
     .article-list .post-excerpt {
         padding-left: 0;
     }
