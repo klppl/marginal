@@ -7,7 +7,6 @@ A retro-minimalist Ghost theme with IndieWeb microformats, dark mode, and zero J
 ## Features
 
 - **IndieWeb-ready** — Full microformat2 markup (`h-feed`, `h-entry`, `h-card`) for compatibility with IndieWeb readers and services
-- **Zero runtime JavaScript** — CSS-only responsive layout with a checkbox-hack mobile menu
 - **Dark mode** — Automatic light/dark switching via `prefers-color-scheme`
 - **8 color palettes** — Default, Catppuccin Mocha, Dracula, Nord, Gruvbox, Tokyo Night, Rose Pine, and Everforest — selectable from Ghost Admin
 - **8 font choices** — Inter, Source Sans 3, DM Sans, Space Grotesk, Libre Baskerville, JetBrains Mono, IBM Plex Mono, and Courier Prime
@@ -58,13 +57,6 @@ npm run test    # Build + validate with gscan
 npm run zip     # Build + create distributable zip
 ```
 
-## Deployment
-
-A GitHub Actions workflow is included at `.github/workflows/deploy-theme.yml`. It deploys automatically on push to `main`. Add these repository secrets:
-
-- `GHOST_ADMIN_API_URL`
-- `GHOST_ADMIN_API_KEY`
-
 ## CSS Architecture
 
 All styles are compiled from `assets/css/index.css` via Rollup + PostCSS:
@@ -81,4 +73,4 @@ Color palettes use OKLCh values with hex fallbacks. Font stacks and spacing are 
 
 ## License
 
-Copyright (c) 2013-2026 Ghost Foundation. Released under the [MIT License](LICENSE).
+Copyright (c) 2025 Alex Klippel. Released under the [MIT License](LICENSE).

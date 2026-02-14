@@ -8,13 +8,13 @@
     "license": "MIT",
     "author": {
         "name": "Marginal",
-        "email": "hello@example.com"
+        "email": "hej@klippel.se"
     },
     "scripts": {
         "dev": "rollup -c --environment BUILD:development -w",
         "build": "rollup -c --environment BUILD:production",
         "zip": "npm run build && bestzip marginal-theme.zip assets/built/* assets/*.js assets/css/* *.hbs package.json locales/ partials/ members/",
-        "test": "npm run build && npx gscan .",
+        "test": "npx gscan .",
         "pretest": "npm run build"
     },
     "keywords": [

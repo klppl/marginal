@@ -96,10 +96,10 @@ form[data-members-form] .message-error {
     width: 15px;
 }
 .message-success svg {
-    fill: #fff;
+    fill: currentColor;
 }
 .message-error svg {
-    fill: red;
+    fill: currentColor;
 }
 
 form[data-members-form].success .message-success,
@@ -121,12 +121,12 @@ form[data-members-form].error .message-error {
     border-radius: var(--input-radius);
 }
 form[data-members-form].success .message-success {
-    background: green;
+    background: #16a34a;
 }
 form[data-members-form].error .message-error {
-    color: red;
-    background: #fff;
-    box-shadow: red 0 0 0 1px;
+    color: #dc2626;
+    background: var(--color-bg, #fff);
+    box-shadow: #dc2626 0 0 0 1px;
 }
 
 form[data-members-form] .gh-button {
@@ -151,7 +151,7 @@ form[data-members-form].loading .gh-button-loader {
 
 .gh-button-loader svg path,
 .gh-button-loader svg rect {
-    fill: #fff;
+    fill: currentColor;
 }
 
 form[data-members-form].success .message-success {
