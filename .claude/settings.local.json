@@ -10,7 +10,8 @@
       "Bash(npx gscan:*)",
       "Bash(npm run test:*)",
       "Bash(tree:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(npm run zip:*)"
     ]
   }
 }
