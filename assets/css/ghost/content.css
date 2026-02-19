@@ -381,6 +381,13 @@ figcaption {
     padding: 1rem 1.25rem;
     border: 1px solid var(--color-border);
     border-radius: 0.25rem;
+    background: var(--color-bg-alt);
+    text-decoration: none;
+    color: inherit;
+}
+
+.kg-file-card-container:hover {
+    border-color: var(--color-primary);
 }
 
 .kg-file-card-contents {
